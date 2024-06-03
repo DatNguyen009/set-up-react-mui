@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { paths } from '@/routes/paths'
+import { useAuthStore } from '@/stores/auth.store'
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,10 +16,9 @@ export default AuthGuard
 
 const Container = ({ children }: AuthGuardProp) => {
   const navigate = useNavigate()
+  const authenticated = useAuthStore((state) => state.authenticated)
 
   const [checked, setChecked] = useState(false)
-
-  const authenticated = true
 
   const check = useCallback(() => {
     if (!authenticated) {

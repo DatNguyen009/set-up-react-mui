@@ -1,4 +1,5 @@
 export const paths = {
+  root: '/',
   dashboard: '/dashboard',
   auth: {
     register: '/register',

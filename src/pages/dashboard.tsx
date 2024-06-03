@@ -1,8 +1,22 @@
-import MainLayout from '@/layouts/main/main-layout'
-import React from 'react'
+import { paths } from '@/routes/paths'
+import { useAuthStore } from '@/stores/auth.store'
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const DashboardPage = () => {
-  return <div>DashboardPage</div>
+  const navigate = useNavigate()
+  const logOut = useAuthStore((state) => state.logOut)
+
+  const handleLogout = async () => {
+    await logOut()
+    navigate(paths.auth.login)
+  }
+  return (
+    <div>
+      DashboardPage
+      <Button onClick={handleLogout}>Logout</Button>
+    </div>
+  )
 }
 
 export default DashboardPage
