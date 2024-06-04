@@ -1,6 +1,6 @@
 import { paths } from '@/routes/paths'
 import { useAuthStore } from '@/stores/auth.store'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 const DashboardPage = () => {
@@ -13,7 +13,7 @@ const DashboardPage = () => {
   }
   return (
     <div>
-      DashboardPage
+      <Typography variant='caption1'>Test font</Typography>
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   )

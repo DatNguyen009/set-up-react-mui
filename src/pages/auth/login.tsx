@@ -1,7 +1,6 @@
 import { paths } from '@/routes/paths'
 import { useAuthStore } from '@/stores/auth.store'
 import { Button } from '@mui/material'
-import React from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const LoginPage = () => {
